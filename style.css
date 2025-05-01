@@ -1,0 +1,426 @@
+/* layout.css - 화려하고 현대적인 스타일로 업그레이드 */
+
+/* 전역 스타일 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding-top: 70px; /* 헤더 높이 조정 */
+    background: linear-gradient(135deg, #1e1e2f 0%, #2a2a4a 100%); /* 그라디언트 배경 */
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+}
+
+/* 컨테이너 */
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 헤더 */
+header {
+    background: linear-gradient(90deg, #007bff, #00ddeb); /* 그라디언트 헤더 */
+    color: #fff;
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease;
+}
+
+header h1 a:hover {
+    transform: scale(1.05);
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+header nav ul li {
+    margin-left: 25px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #fff;
+    transition: width 0.3s ease;
+}
+
+header nav ul li a:hover::after {
+    width: 100%;
+}
+
+header nav ul li a:hover {
+    color: #e0f7ff;
+}
+
+/* 메인 콘텐츠 */
+main {
+    flex-grow: 1;
+    padding: 40px 0;
+}
+
+/* 히어로 섹션 */
+.hero-section {
+    background: linear-gradient(45deg, #2e2e4f, #1e1e2f); /* 어두운 그라디언트 */
+    padding: 100px 0;
+    text-align: center;
+    border-radius: 12px;
+    margin: 20px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* .hero-content h2 수정 */
+.hero-content h2 {
+    font-size: 3em;
+    font-weight: 800;
+    background: linear-gradient(90deg, #00ddeb, #007bff);
+    background-clip: text; /* 표준 속성 */
+    -webkit-background-clip: text; /* Webkit 접두사 */
+    -webkit-text-fill-color: transparent; /* Webkit 투명 텍스트 */
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.3em;
+    color: #b0b0d0;
+    line-height: 1.7;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+/* 비밀번호 생성 카드 */
+.password-generator-card {
+    background: rgba(255, 255, 255, 0.1); /* 반투명 유리 효과 */
+    backdrop-filter: blur(10px); /* 유리 효과 */
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    margin-top: 40px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.password-generator-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 123, 255, 0.4);
+}
+
+.password-generator-card h3 {
+    font-size: 1.8em;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+/* 옵션 스타일 */
+.options label {
+    color: #d0d0ff;
+    font-size: 15px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.options input[type="number"] {
+    width: 80px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.options input[type="number"]:focus {
+    background: rgba(255, 255, 255, 0.25);
+    outline: none;
+}
+
+.checkbox-group label {
+    color: #d0d0ff;
+    margin-bottom: 8px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    accent-color: #007bff;
+}
+
+.advanced-options {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 20px;
+}
+
+/* 결과 출력 */
+.result {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.result input[type="text"] {
+    flex-grow: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.result input[type="text"]:focus {
+    background: rgba(255, 255, 255, 0.25);
+    outline: none;
+}
+
+.result button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #007bff, #00ddeb);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.result button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.5);
+}
+
+/* 기능 섹션 */
+.features-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #1e1e2f, #2a2a4a);
+    text-align: center;
+}
+
+.features-section h2 {
+    font-size: 2.5em;
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+.feature-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.feature-item {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+}
+
+.feature-item img {
+    max-width: 60px;
+    margin-bottom: 20px;
+}
+
+.feature-item h3 {
+    color: #fff;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.feature-item p {
+    color: #b0b0d0;
+    line-height: 1.7;
+}
+
+/* Why Us 섹션 */
+.why-us-section {
+    padding: 80px 0;
+    background: #2e2e4f;
+    text-align: center;
+}
+
+.why-us-section h2 {
+    font-size: 2.5em;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.why-us-section p, .why-us-section ul {
+    color: #b0b0d0;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto 20px;
+}
+
+.why-us-section ul {
+    list-style: disc;
+    padding-left: 30px;
+    text-align: left;
+}
+
+/* 보안 팁 섹션 */
+.security-tips-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #1e1e2f, #2a2a4a);
+    text-align: center;
+}
+
+.security-tips-section h2 {
+    font-size: 2.5em;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.security-tips-section ol {
+    color: #b0b0d0;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    padding-left: 30px;
+}
+
+/* 푸터 */
+footer {
+    background: linear-gradient(90deg, #007bff, #00ddeb);
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+footer p {
+    font-size: 15px;
+}
+
+footer nav ul {
+    display: flex;
+    list-style: none;
+}
+
+footer nav ul li {
+    margin-left: 20px;
+}
+
+footer nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+footer nav ul li a:hover {
+    color: #e0f7ff;
+}
+
+/* 애니메이션 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul {
+        margin-top: 15px;
+    }
+
+    header nav ul li {
+        margin: 0 10px;
+    }
+
+    .hero-content h2 {
+        font-size: 2em;
+    }
+
+    .hero-content p {
+        font-size: 1.1em;
+    }
+
+    .password-generator-card {
+        padding: 20px;
+    }
+
+    .result {
+        flex-direction: column;
+    }
+
+    .result button {
+        width: 100%;
+    }
+
+    footer .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer nav ul {
+        margin-top: 15px;
+    }
+}
